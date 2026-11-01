@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-/Ej67OuHsK6qNOhGmJIIvzvAiqDqruPWwOn3DYXxaqU='; style-src 'unsafe-inline'; img-src data:; connect-src https://overpass-api.de https://overpass.private.coffee; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Flitswacht</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Flitswacht">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0d1114">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<style>
+/* Layout: one-screen car dashboard. The speed fills the upper part; below it (beside it in landscape)
+   a panel styled like a Dutch road sign carries the warning. Dark by design for night driving. */
+:root{
+  --asphalt:#0d1114;
+  --panel:#171d22;
+  --line:#2a333b;
+  --fg:#eef2f3;
+  --muted:#8d9aa4;
+  --sign-blue:#1d5fc4;
+  --sign-red:#d9231b;
+  --sign-white:#ffffff;
+  --amber:#f4b400;
+  --ok:#35c873;
+  --ink:#111417;
+  --track:rgba(255,255,255,.24);
+  --font-display:-apple-system,"SF Pro Display",system-ui,"Helvetica Neue",Arial,sans-serif;
+  --font-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%;margin:0}
+body{background:var(--asphalt);color:var(--fg);font-family:var(--font-display);font-size:16px;line-height:1.4;
+  -webkit-font-smoothing:antialiased;overflow:hidden;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+
+/* ---------- drive screen ---------- */
+#app{height:100%;display:grid;grid-template-rows:auto 1fr auto;gap:12px;
+  padding-top:max(10px,env(safe-area-inset-top,0px));padding-bottom:max(12px,env(safe-area-inset-bottom,0px));
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;font-family:var(--font-mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;flex-wrap:wrap}
+.bar .gps{display:flex;align-items:center;gap:6px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--muted);display:inline-block}
+.dot.good{background:var(--ok)}.dot.fair{background:var(--amber)}.dot.bad{background:var(--sign-red)}
+.demo-tag{background:var(--amber);color:var(--ink);font-weight:600;padding:1px 7px;border-radius:4px;letter-spacing:.08em}
+.notice{flex-basis:100%;font-family:var(--font-display);font-size:14px;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.notice.warn{border-color:var(--amber)}
+
+.dash{display:grid;grid-template-rows:1fr auto;gap:14px;min-height:0}
+.speedo{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:0}
+.speed{font-weight:900;font-size:clamp(110px,40vw,250px);line-height:.82;letter-spacing:-.04em;font-variant-numeric:tabular-nums;transition:color .2s}
+.unit{font-family:var(--font-mono);font-size:14px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.speedo.over .speed{color:var(--sign-red)}
+.speedo.stale .speed{color:var(--muted)}
+.limit{position:absolute;top:0;right:0;width:clamp(66px,19vw,104px);aspect-ratio:1;max-width:100%;border-radius:50%;background:var(--sign-white);
+  border:clamp(8px,2.3vw,12px) solid var(--sign-red);color:var(--ink);display:grid;place-items:center;
+  font-weight:800;font-size:clamp(26px,7.5vw,42px);font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+
+.panel{border-radius:14px;padding:16px 18px;min-height:156px;display:flex;flex-direction:column;justify-content:center;gap:8px;
+  background:var(--panel);border:1px solid var(--line);transition:background-color .2s,color .2s}
+.panel[data-state="cam"]{background:var(--amber);color:var(--ink);border-color:var(--amber)}
+.panel[data-state="camfast"]{background:var(--sign-red);color:var(--sign-white);border-color:var(--sign-red)}
+.panel[data-state="approach"],.panel[data-state="traject"],.panel[data-state="finished"]{
+  background:var(--sign-blue);color:var(--sign-white);border:3px solid var(--sign-white);box-shadow:0 0 0 3px var(--sign-blue)}
+.p-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-weight:800;font-size:15px;text-transform:uppercase;letter-spacing:.07em}
+.p-max{font-family:var(--font-mono);font-weight:600;letter-spacing:.04em}
+.p-big{font-weight:900;font-size:clamp(46px,15vw,84px);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.p-big small{font-size:.42em;font-weight:700;letter-spacing:0;margin-left:.15em}
+.p-big small.pre{margin:0 .25em 0 0;text-transform:lowercase}
+.p-sub{font-weight:600;font-size:16px}
+.p-avg{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.p-avg .lbl{font-weight:600;font-size:16px}
+.p-avg .num{font-weight:900;font-size:clamp(58px,18vw,96px);line-height:.9;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.p-avg .u{font-family:var(--font-mono);font-size:14px}
+.chip{align-self:center;font-size:12px;font-weight:800;padding:5px 10px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
+.chip.ok{background:var(--ok);color:var(--ink)}
+.chip.tight{background:var(--amber);color:var(--ink)}
+.chip.high{background:var(--sign-red);color:var(--sign-white)}
+.progress{height:10px;border-radius:5px;background:var(--track);overflow:hidden}
+.progress i{display:block;height:100%;background:var(--sign-white);border-radius:5px;transition:width .4s}
+.p-row{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--font-mono);font-size:14px;font-variant-numeric:tabular-nums}
+.strip{background:var(--amber);color:var(--ink);border-radius:8px;padding:6px 10px;font-weight:800}
+.p-idle .eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ok)}
+.p-idle p{margin:4px 0 0;color:var(--muted);font-size:16px;max-width:40ch}
+
+.controls{display:flex;gap:10px}
+.controls button{flex:1;min-height:52px;border-radius:12px;background:var(--panel);border:1px solid var(--line);font-weight:700;font-size:16px}
+.controls #stopBtn{border-color:var(--sign-red)}
+.controls button[aria-pressed="false"]{color:var(--muted)}
+
+/* ---------- start screen ---------- */
+.intro{position:fixed;inset:0;z-index:20;background:var(--asphalt);overflow-y:auto;-webkit-user-select:text;user-select:text;
+  padding-top:max(24px,env(safe-area-inset-top,0px));padding-bottom:max(24px,env(safe-area-inset-bottom,0px));
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.intro-inner{max-width:520px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;justify-content:center;gap:22px}
+.plaque{align-self:flex-start;display:flex;align-items:center;gap:14px;background:var(--sign-blue);color:var(--sign-white);
+  border:3px solid var(--sign-white);box-shadow:0 0 0 4px var(--sign-blue);border-radius:10px;padding:10px 16px 8px}
+.plaque .ring{width:46px;height:46px;border-radius:50%;background:var(--sign-white);border:7px solid var(--sign-red);color:var(--ink);
+  display:grid;place-items:center;font-weight:900;font-size:17px;letter-spacing:-.03em}
+.plaque h1{margin:0;font-size:32px;font-weight:900;letter-spacing:.01em;line-height:1}
+.lede{margin:0;font-size:19px;line-height:1.45;max-width:36ch;text-wrap:balance}
+.actions{display:flex;flex-direction:column;gap:10px}
+.actions button{min-height:58px;border-radius:12px;font-size:18px;font-weight:800}
+.btn-primary{background:var(--sign-blue);color:var(--sign-white);border:2px solid var(--sign-white)}
+.btn-secondary{background:var(--panel);border:1px solid var(--line)}
+.msg{margin:0;background:var(--panel);border:1px solid var(--sign-red);border-radius:10px;padding:10px 12px;font-size:15px}
+.data-line{margin:0;font-family:var(--font-mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.notes{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;color:var(--muted);font-size:15px;max-width:60ch}
+.notes li{padding-left:14px;border-left:2px solid var(--line)}
+.notes b{color:var(--fg);font-weight:600}
+
+@media (orientation:landscape) and (max-height:620px){
+  .dash{grid-template-columns:1fr 1fr;grid-template-rows:1fr;align-items:center}
+  .speed{font-size:min(28vw,54vh)}
+  .panel{min-height:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div id="app">
+  <header class="bar">
+    <span class="gps"><i class="dot" id="gpsDot"></i><span id="gpsTxt">GPS</span></span>
+    <span id="dataTxt"></span>
+    <span class="demo-tag" id="demoTag" hidden>DEMO</span>
+    <div class="notice" id="notice" hidden></div>
+  </header>
+
+  <main class="dash">
+    <section class="speedo" id="speedo" aria-live="off">
+      <div class="speed" id="speed">–</div>
+      <div class="unit">km/u</div>
+      <div class="limit" id="limit" hidden aria-label="Maximumsnelheid"><span id="limitNum"></span></div>
+    </section>
+    <section class="panel" id="panel" data-state="idle" aria-live="polite"></section>
+  </main>
+
+  <footer class="controls">
+    <button id="stopBtn" type="button">Stop</button>
+    <button id="soundBtn" type="button" aria-pressed="true">Geluid aan</button>
+    <button id="refreshBtn" type="button">Vernieuwen</button>
+  </footer>
+</div>
+
+<div class="intro" id="intro">
+  <div class="intro-inner">
+    <div class="plaque"><span class="ring">80</span><h1>Flitswacht</h1></div>
+    <p class="lede">Waarschuwt voor flitspalen en trajectcontroles, toont je snelheid en meet je gemiddelde snelheid tijdens een trajectcontrole.</p>
+    <p class="msg" id="introMsg" hidden></p>
+    <div class="actions">
+      <button class="btn-primary" id="startBtn" type="button">Start rit</button>
+      <button class="btn-secondary" id="demoBtn" type="button">Bekijk demo</button>
+    </div>
+    <p class="data-line" id="introData"></p>
+    <ul class="notes">
+      <li><b>Telefoon in een houder, scherm aan.</b> Met het scherm uit of in een andere app krijgt Flitswacht geen locatie en waarschuwt hij niet.</li>
+      <li><b>Vaste controles uit OpenStreetMap.</b> Mobiele flitsers en net geplaatste palen staan er niet in.</li>
+      <li><b>Gemiddelde snelheid is een schatting</b> op basis van je GPS. De meting van de politie kan iets afwijken.</li>
+      <li id="homeHint" hidden><b>Als app gebruiken:</b> tik in Safari op Delen en kies ‘Zet op beginscherm’.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+(() => {
+'use strict';
+
+/* ---------- settings ---------- */
+const KEY_DATA = 'flitswacht.data.v1';
+const KEY_SOUND = 'flitswacht.sound';
+const RADIUS = 150000;          // load cameras within 150 km
+const REFETCH_DIST = 75000;     // reload when 75 km from the load centre
+const MAX_AGE = 7 * 864e5;      // reload after 7 days
+const ENDPOINTS = [
+  'https://overpass-api.de/api/interpreter',
+  'https://overpass.private.coffee/api/interpreter'
+];
+
+const $ = id => document.getElementById(id);
+const el = {
+  intro: $('intro'), start: $('startBtn'), demo: $('demoBtn'), introData: $('introData'), introMsg: $('introMsg'), homeHint: $('homeHint'),
+  speed: $('speed'), speedo: $('speedo'), limit: $('limit'), limitNum: $('limitNum'),
+  gpsDot: $('gpsDot'), gpsTxt: $('gpsTxt'), dataTxt: $('dataTxt'), demoTag: $('demoTag'),
+  notice: $('notice'), panel: $('panel'), stop: $('stopBtn'), sound: $('soundBtn'), refresh: $('refreshBtn')
+};
+
+/* ---------- geo helpers ---------- */
+const RE = 6371000;
+const toRad = d => d * Math.PI / 180, toDeg = r => r * 180 / Math.PI;
+function dist(a, b) {
+  const dLat = toRad(b.lat - a.lat), dLon = toRad(b.lon - a.lon);
+  const s = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.sin(dLon / 2) ** 2;
+  return 2 * RE * Math.asin(Math.min(1, Math.sqrt(s)));
+}
+function bearing(a, b) {
+  const y = Math.sin(toRad(b.lon - a.lon)) * Math.cos(toRad(b.lat));
+  const x = Math.cos(toRad(a.lat)) * Math.sin(toRad(b.lat)) - Math.sin(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.cos(toRad(b.lon - a.lon));
+  return (toDeg(Math.atan2(y, x)) + 360) % 360;
+}
+function angDiff(a, b) { const d = Math.abs(a - b) % 360; return d > 180 ? 360 - d : d; }
+
+/* ---------- formatting ---------- */
+const nl1 = n => n.toFixed(1).replace('.', ',');
+function fmtKm(m) { return m < 1000 ? `${Math.round(m / 10) * 10} m` : `${nl1(m / 1000)} km`; }
+function fmtDistBig(m) { return m < 1000 ? `${Math.max(0, Math.round(m / 10) * 10)}<small>m</small>` : `${nl1(m / 1000)}<small>km</small>`; }
+function spokenDist(m) { return m < 1000 ? `${Math.max(50, Math.round(m / 50) * 50)} meter` : `${nl1(m / 1000)} kilometer`; }
+function fmtTime(s) { s = Math.max(0, Math.round(s)); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`; }
+function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+function ago(t) {
+  const days = Math.floor((Date.now() - t) / 864e5);
+  return days <= 0 ? 'vandaag' : days === 1 ? 'gisteren' : `${days} dagen geleden`;
+}
+function parseLimit(v) {
+  if (!v) return null;
+  const n = parseInt(v, 10);
+  if (!isFinite(n) || n <= 0) return null;
+  return /mph/i.test(v) ? Math.round(n * 1.609) : n;
+}
+
+/* ---------- storage ---------- */
+function store(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+
+/* ---------- data: OpenStreetMap via Overpass ---------- */
+function parseOverpass(json) {
+  const nodes = [], rels = [];
+  for (const e of json.elements || []) {
+    if (e.type === 'node') nodes.push(e);
+    else if (e.type === 'relation') rels.push(e);
+  }
+  const nodeById = new Map(nodes.map(n => [n.id, n]));
+  const memberIds = new Set();
+  const secs = [];
+  for (const r of rels) {
+    const t = r.tags || {};
+    const mem = r.members || [];
+    const pts = mem.filter(m => m.type === 'node' && typeof m.lat === 'number');
+    pts.forEach(m => memberIds.add(m.ref));
+    const ways = mem.filter(m => m.type === 'way' && Array.isArray(m.geometry)).map(m => m.geometry.filter(Boolean));
+    const from = pts.find(m => m.role === 'from'), to = pts.find(m => m.role === 'to');
+    let a, b, directed;
+    const farthestFrom = (p, list) => list.reduce((best, q) => (dist(p, q) > dist(p, best) ? q : best), list[0]);
+    let cand = pts.length >= 2 ? pts : [];
+    if (cand.length < 2) ways.forEach(g => { if (g.length) cand.push(g[0], g[g.length - 1]); });
+    if (from && to) { a = from; b = to; directed = true; }
+    else if (from && cand.length >= 2) { a = from; b = farthestFrom(from, cand); directed = true; }
+    else if (to && cand.length >= 2) { b = to; a = farthestFrom(to, cand); directed = true; }
+    else if (cand.length >= 2) {
+      let best = [cand[0], cand[1], -1];
+      for (let i = 0; i < cand.length; i++) for (let j = i + 1; j < cand.length; j++) {
+        const d = dist(cand[i], cand[j]); if (d > best[2]) best = [cand[i], cand[j], d];
+      }
+      a = best[0]; b = best[1]; directed = false;
+    } else continue;
+    const straight = dist(a, b);
+    if (straight < 250) continue;
+    let wayLen = 0;
+    ways.forEach(g => { for (let i = 1; i < g.length; i++) wayLen += dist(g[i - 1], g[i]); });
+    const len = (wayLen > straight * 0.98 && wayLen < straight * 1.6) ? wayLen : straight * 1.02;
+    let limit = parseLimit(t.maxspeed);
+    if (!limit) for (const p of pts) { const n = nodeById.get(p.ref); if (n && n.tags && parseLimit(n.tags.maxspeed)) { limit = parseLimit(n.tags.maxspeed); break; } }
+    secs.push({
+      id: 'r' + r.id, name: t.name || t.description || t.ref || '', limit,
+      a: { lat: a.lat, lon: a.lon }, b: { lat: b.lat, lon: b.lon }, directed, len: Math.round(len)
+    });
+  }
+  const cams = nodes.filter(n => !memberIds.has(n.id)).map(n => {
+    const t = n.tags || {};
+    return { id: 'n' + n.id, lat: n.lat, lon: n.lon, limit: parseLimit(t.maxspeed), kind: t.enforcement === 'average_speed' ? 'traject' : 'flits' };
+  });
+  return { cams, secs };
+}
+function prepare(d) {
+  for (const s of d.secs) {
+    s.straight = dist(s.a, s.b);
+    s.k = Math.max(1, s.len / s.straight);
+    s.ends = s.directed ? [[s.a, s.b, 0]] : [[s.a, s.b, 0], [s.b, s.a, 1]];
+  }
+  return d;
+}
+function serialise(d) {
+  return JSON.stringify({
+    cams: d.cams, center: d.center, fetched: d.fetched,
+    secs: d.secs.map(({ id, name, limit, a, b, directed, len }) => ({ id, name, limit, a, b, directed, len }))
+  });
+}
+
+/* ---------- state ---------- */
+const S = {
+  running: false, demo: false, sound: load(KEY_SOUND) !== '0',
+  data: null, fetching: false, lastFetchTry: 0,
+  last: null, lastRecv: 0, heading: null, speedKmh: 0,
+  camTrack: new Map(), secTrack: new Map(), cool: new Map(),
+  activeCam: null, approach: null, inSec: null, finished: null,
+  watchId: null, demoTimer: null, wake: null, noticeKind: null
+};
+let cached = null;
+try { const raw = load(KEY_DATA); if (raw) cached = prepare(JSON.parse(raw)); } catch (e) { cached = null; }
+S.data = cached;
+
+const cooling = (key, now) => (S.cool.get(key) || 0) > now;
+const cool = (key, now, ms) => S.cool.set(key, now + ms);
+
+async function fetchData(pos) {
+  if (S.fetching || S.demo) return;
+  // only a rounded area (about 25 km grid) is sent to the server, never your exact position
+  const center = { lat: Math.round(pos.lat * 4) / 4, lon: Math.round(pos.lon * 4) / 4 };
+  S.fetching = true; S.lastFetchTry = Date.now();
+  setNotice('Flitsers en trajectcontroles laden…', 'load');
+  const dLat = RADIUS / 111320, dLon = RADIUS / (111320 * Math.cos(toRad(center.lat)));
+  const bb = [center.lat - dLat, center.lon - dLon, center.lat + dLat, center.lon + dLon].map(x => x.toFixed(4)).join(',');
+  const q = `[out:json][timeout:120];node["highway"="speed_camera"](${bb});out body;` +
+            `rel["type"="enforcement"]["enforcement"="average_speed"](${bb});out geom;`;
+  for (const ep of ENDPOINTS) {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 60000);
+    try {
+      const r = await fetch(ep, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: 'data=' + encodeURIComponent(q), signal: ctrl.signal });
+      clearTimeout(timer);
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const d = parseOverpass(await r.json());
+      d.center = { lat: center.lat, lon: center.lon }; d.fetched = Date.now();
+      prepare(d);
+      cached = d;
+      if (!S.demo) S.data = d;
+      store(KEY_DATA, serialise(d));
+      S.fetching = false;
+      setNotice(null);
+      updateIntro(); render();
+      return;
+    } catch (e) { clearTimeout(timer); }
+  }
+  S.fetching = false;
+  setNotice(S.data
+    ? 'Nieuwe locaties laden lukte niet. Flitswacht gebruikt de opgeslagen locaties.'
+    : 'De locaties konden niet worden geladen. Controleer je internetverbinding en tik op Vernieuwen.', 'warn');
+}
+function maybeFetch(f) {
+  if (S.demo || S.fetching || Date.now() - S.lastFetchTry < 120000) return;
+  const d = S.data;
+  if (!d || !d.center || dist(d.center, f) > REFETCH_DIST || Date.now() - d.fetched > MAX_AGE) fetchData(f);
+}
+
+/* ---------- sound & speech ---------- */
+let audio = null, nlVoice = null;
+function pickVoice() {
+  try { const vs = speechSynthesis.getVoices(); nlVoice = vs.find(v => /^nl[-_]NL/i.test(v.lang)) || vs.find(v => /^nl/i.test(v.lang)) || null; } catch (e) {}
+}
+if ('speechSynthesis' in window) { pickVoice(); speechSynthesis.addEventListener?.('voiceschanged', pickVoice); }
+function unlockAudio() {
+  try {
+    if (navigator.audioSession) navigator.audioSession.type = 'transient';
+    audio = audio || new (window.AudioContext || window.webkitAudioContext)();
+    if (audio.state === 'suspended') audio.resume();
+    const o = audio.createOscillator(), g = audio.createGain();
+    g.gain.value = 0; o.connect(g).connect(audio.destination); o.start(); o.stop(audio.currentTime + 0.05);
+  } catch (e) {}
+  try { const u = new SpeechSynthesisUtterance(' '); u.volume = 0; speechSynthesis.speak(u); } catch (e) {}
+}
+function tone(freq, dur, when = 0, vol = 0.3) {
+  if (!S.sound || !audio) return;
+  try {
+    const t = audio.currentTime + when, o = audio.createOscillator(), g = audio.createGain();
+    o.type = 'sine'; o.frequency.value = freq;
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(vol, t + 0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(g).connect(audio.destination); o.start(t); o.stop(t + dur + 0.05);
+  } catch (e) {}
+}
+const chime = {
+  cam: () => { tone(880, .18); tone(1175, .28, .2); },
+  sec: () => { tone(660, .18); tone(880, .18, .2); tone(1100, .3, .4); },
+  fast: () => { for (let i = 0; i < 3; i++) tone(1400, .12, i * .17, .4); },
+  end: () => { tone(1100, .18); tone(880, .3, .2); }
+};
+function say(text, delay = 550) {
+  if (!S.sound || !('speechSynthesis' in window)) return;
+  setTimeout(() => {
+    try {
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'nl-NL'; if (nlVoice) u.voice = nlVoice; u.rate = 1.05;
+      speechSynthesis.speak(u);
+    } catch (e) {}
+  }, delay);
+}
+
+/* ---------- screen wake lock ---------- */
+async function requestWake() {
+  try { if ('wakeLock' in navigator && document.visibilityState === 'visible') S.wake = await navigator.wakeLock.request('screen'); } catch (e) {}
+}
+function releaseWake() { try { S.wake && S.wake.release(); } catch (e) {} S.wake = null; }
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && S.running) requestWake(); });
+
+/* ---------- core: one GPS fix ---------- */
+function step(f) {
+  const prev = S.last;
+  let v = (typeof f.speed === 'number' && f.speed >= 0) ? f.speed : null;
+  if (v == null && prev) { const dt = (f.t - prev.t) / 1000; if (dt > 0) v = dist(prev, f) / dt; }
+  if (v == null || !isFinite(v)) v = 0;
+  f.v = v;
+  if (typeof f.heading === 'number' && f.heading >= 0 && v > 1.5) S.heading = f.heading;
+  else if (prev && v > 1.5 && dist(prev, f) > 6) S.heading = bearing(prev, f);
+
+  if (S.inSec && prev) {
+    const dt = (f.t - prev.t) / 1000;
+    if (dt > 0 && dt <= 10) S.inSec.dist += (prev.v + v) / 2 * dt;
+    else if (dt > 10) S.inSec.dist += dist(prev, f);
+  }
+  S.last = f;
+  S.speedKmh = v * 3.6;
+  if (S.data) { checkSections(f); checkCams(f); }
+  render();
+}
+
+function checkSections(f) {
+  const now = f.t;
+  if (S.finished && now > S.finished.until) S.finished = null;
+
+  const s = S.inSec;
+  if (s) {
+    const dE = dist(f, s.end);
+    s.dE = dE;
+    if (!s.endMin || dE < s.endMin.d) s.endMin = { d: dE, t: now, dist: s.dist };
+    if (s.endMin.d < 110 && dE > s.endMin.d + 12) { finishSection(s, now); return; }
+    if (dE > s.straight + 1500 || now - s.t0 > 3600e3) { S.inSec = null; cool(s.sec.id, now, 600e3); }
+    return;
+  }
+
+  const appr = Math.max(500, Math.min(1200, S.speedKmh * 9));
+  const near = p => Math.abs(p.lat - f.lat) < 0.02 && Math.abs(p.lon - f.lon) < 0.035;
+  let best = null;
+  for (const sec of S.data.secs) {
+    if (cooling(sec.id, now) || (!near(sec.a) && !near(sec.b))) {
+      S.secTrack.delete(sec.id + ':0'); S.secTrack.delete(sec.id + ':1');
+      continue;
+    }
+    for (const [a, b, i] of sec.ends) {
+      const key = sec.id + ':' + i;
+      const dS = dist(f, a);
+      if (dS > 1600) { S.secTrack.delete(key); continue; }
+      let tr = S.secTrack.get(key);
+      if (!tr) { tr = { prevD: dS, minD: dS, minFix: { t: now, lat: f.lat, lon: f.lon } }; S.secTrack.set(key, tr); }
+      if (dS < tr.minD) { tr.minD = dS; tr.minFix = { t: now, lat: f.lat, lon: f.lon }; }
+      // passed the start point: are we now driving towards the end?
+      if (tr.minD < 110 && dS > tr.minD + 12) {
+        if (dist(f, b) < dist(a, b) - 15) { enterSection(sec, a, b, tr.minFix, f); return; }
+        tr.minD = dS; tr.minFix = { t: now, lat: f.lat, lon: f.lon };
+      }
+      const approaching = dS < tr.prevD - 0.5;
+      tr.prevD = dS;
+      if (approaching && dS < appr && S.heading != null &&
+          angDiff(S.heading, bearing(f, a)) < 40 && angDiff(S.heading, bearing(a, b)) < 75) {
+        if (!best || dS < best.d) best = { sec, a, b, d: dS, key };
+      }
+    }
+  }
+  if (!best && S.approach) {
+    const d = dist(f, S.approach.a);
+    if (d < S.approach.d + 25 && d < 1400) { S.approach.d = d; best = S.approach; }
+  }
+  S.approach = best;
+  if (best && !cooling('say:' + best.key, now)) {
+    cool('say:' + best.key, now, 600e3);
+    chime.cam();
+    say(`Trajectcontrole over ${spokenDist(best.d)}.${best.sec.limit ? ` Maximaal ${best.sec.limit}.` : ''}`);
+  }
+}
+function enterSection(sec, a, b, minFix, f) {
+  S.inSec = { sec, start: a, end: b, t0: minFix.t, dist: dist(minFix, f), straight: dist(a, b), k: sec.k, dE: dist(f, b), endMin: null };
+  S.approach = null; S.finished = null; S.secTrack.clear();
+  cool('say:' + sec.id + ':0', f.t, 600e3); cool('say:' + sec.id + ':1', f.t, 600e3);
+  chime.sec();
+  say(`Start trajectcontrole.${sec.limit ? ` Maximaal ${sec.limit}.` : ''}`);
+}
+function finishSection(s, now) {
+  const e = s.endMin, secs = (e.t - s.t0) / 1000;
+  const avg = secs > 3 ? e.dist / secs * 3.6 : null;
+  S.finished = { sec: s.sec, avg, dist: e.dist, secs, until: now + 30000 };
+  S.inSec = null; S.secTrack.clear();
+  cool(s.sec.id, now, 600e3);
+  chime.end();
+  if (avg != null) say(`Einde trajectcontrole. Gemiddeld ${Math.round(avg)}.`);
+}
+
+function checkCams(f) {
+  const now = f.t, v = S.speedKmh, h = S.heading;
+  const look = Math.max(350, Math.min(1300, v * 10));
+
+  const ac = S.activeCam;
+  if (ac) {
+    const d = dist(f, ac.cam);
+    if (d < ac.minD) ac.minD = d;
+    const passed = (ac.minD < 150 && d > ac.minD + 20) || d > look + 500 ||
+                   (h != null && d > 40 && angDiff(h, bearing(f, ac.cam)) > 110);
+    if (passed) { cool(ac.cam.id, now, 240e3); S.activeCam = null; }
+    else {
+      ac.d = d;
+      if (ac.cam.limit && v > ac.cam.limit + 1 && d < 450 && !ac.fastWarned) {
+        ac.fastWarned = true; chime.fast(); say('Te hard.', 600);
+      }
+    }
+  }
+  if (h == null || v < 8) return;
+
+  let cand = null;
+  for (const c of S.data.cams) {
+    if (Math.abs(c.lat - f.lat) > 0.014 || Math.abs(c.lon - f.lon) > 0.024) { S.camTrack.delete(c.id); continue; }
+    const d = dist(f, c);
+    const prevD = S.camTrack.get(c.id);
+    S.camTrack.set(c.id, d);
+    if (d > look || cooling(c.id, now) || (S.activeCam && S.activeCam.cam.id === c.id)) continue;
+    if (prevD == null || d >= prevD - 0.3) continue;              // must be getting closer
+    if (angDiff(h, bearing(f, c)) > (d > 150 ? 28 : 50)) continue;  // must be ahead of us
+    if (!cand || d < cand.d) cand = { cam: c, d };
+  }
+  if (cand && (!S.activeCam || cand.d < S.activeCam.d - 50)) {
+    S.activeCam = { cam: cand.cam, d: cand.d, minD: cand.d, fastWarned: false };
+    chime.cam();
+    const what = cand.cam.kind === 'traject' ? 'Trajectcontrolepaal' : 'Flitser';
+    say(`${what} over ${spokenDist(cand.d)}.${cand.cam.limit ? ` Maximaal ${cand.cam.limit}.` : ''}`);
+  }
+}
+
+/* ---------- rendering ---------- */
+const camLabel = c => c.kind === 'traject' ? 'Trajectcontrolepaal' : 'Flitser';
+function chip(avg, lim) {
+  if (avg == null || !lim) return '';
+  const r = Math.round(avg);
+  if (r > lim) return '<span class="chip high">Boven limiet</span>';
+  if (r > lim - 3) return '<span class="chip tight">Krap</span>';
+  return '<span class="chip ok">Binnen limiet</span>';
+}
+function panelContent() {
+  const now = S.last ? S.last.t : Date.now();
+  const ac = S.activeCam;
+  const strip = ac ? `<div class="strip">${camLabel(ac.cam)} over ${fmtKm(ac.d)}${ac.cam.limit ? ` · max ${ac.cam.limit}` : ''}</div>` : '';
+
+  if (S.inSec) {
+    const s = S.inSec, secs = (now - s.t0) / 1000, lim = s.sec.limit;
+    const avg = secs >= 3 ? s.dist / secs * 3.6 : null;
+    const rem = s.dE * s.k;
+    const pct = Math.max(0, Math.min(100, s.dist / (s.dist + rem) * 100));
+    return ['traject', `
+      <div class="p-head"><span>Trajectcontrole</span>${lim ? `<span class="p-max">max ${lim}</span>` : ''}</div>
+      <div class="p-avg"><span class="lbl">Gemiddeld</span><span class="num">${avg == null ? '–' : Math.round(avg)}</span><span class="u">km/u</span>${chip(avg, lim)}</div>
+      <div class="progress" role="progressbar" aria-label="Voortgang traject" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(pct)}"><i style="width:${pct.toFixed(1)}%"></i></div>
+      <div class="p-row"><span>${fmtKm(s.dist)} gereden</span><span>nog ± ${fmtKm(rem)}</span><span>${fmtTime(secs)}</span></div>
+      ${strip}`];
+  }
+  if (ac) {
+    const fast = ac.cam.limit && S.speedKmh > ac.cam.limit + 1;
+    return [fast ? 'camfast' : 'cam', `
+      <div class="p-head"><span>${camLabel(ac.cam)}</span>${ac.cam.limit ? `<span class="p-max">max ${ac.cam.limit}</span>` : ''}</div>
+      <div class="p-big">${fmtDistBig(ac.d)}</div>
+      <div class="p-sub">${fast ? `Te hard. Rem af naar ${ac.cam.limit}.` : 'Let op je snelheid.'}</div>`];
+  }
+  if (S.finished) {
+    const z = S.finished, lim = z.sec.limit;
+    return ['finished', `
+      <div class="p-head"><span>Einde trajectcontrole</span>${lim ? `<span class="p-max">max ${lim}</span>` : ''}</div>
+      <div class="p-avg"><span class="lbl">Gemiddeld</span><span class="num">${z.avg == null ? '–' : Math.round(z.avg)}</span><span class="u">km/u</span>${chip(z.avg, lim)}</div>
+      <div class="p-row"><span>${fmtKm(z.dist)} in ${fmtTime(z.secs)}</span></div>`];
+  }
+  if (S.approach) {
+    const p = S.approach, lim = p.sec.limit;
+    return ['approach', `
+      <div class="p-head"><span>Trajectcontrole</span>${lim ? `<span class="p-max">max ${lim}</span>` : ''}</div>
+      <div class="p-big"><small class="pre">over</small> ${fmtDistBig(p.d)}</div>
+      ${p.sec.name ? `<div class="p-sub">${esc(p.sec.name)}</div>` : ''}`];
+  }
+  let title = 'Vrije baan', text = 'Geen flitser of trajectcontrole binnen 1 km voor je.';
+  if (!S.data) { title = 'Locaties'; text = S.fetching ? 'Flitsers en trajectcontroles worden geladen…' : 'Nog geen locaties geladen. Wacht op GPS of tik op Vernieuwen.'; }
+  else if (!S.last) { title = 'GPS'; text = 'Wachten op je locatie…'; }
+  else if (S.heading == null) { title = 'Klaar'; text = 'Waarschuwingen beginnen zodra je rijdt.'; }
+  return ['idle', `<div class="p-idle"><div class="eyebrow">${title}</div><p>${text}</p></div>`];
+}
+let lastPanel = '';
+function render() {
+  const f = S.last;
+  const stale = !f || Date.now() - S.lastRecv > 6000;
+  el.speed.textContent = f && !stale ? String(Math.round(S.speedKmh)) : '–';
+  el.speedo.classList.toggle('stale', stale);
+
+  const lim = S.inSec ? S.inSec.sec.limit : S.activeCam ? S.activeCam.cam.limit : S.approach ? S.approach.sec.limit : null;
+  el.limit.hidden = !lim;
+  if (lim) el.limitNum.textContent = lim;
+  el.speedo.classList.toggle('over', !stale && !!lim && Math.round(S.speedKmh) > lim);
+
+  if (S.demo) { el.gpsDot.className = 'dot good'; el.gpsTxt.textContent = 'gesimuleerd'; }
+  else if (stale) { el.gpsDot.className = 'dot bad'; el.gpsTxt.textContent = f ? 'geen GPS' : 'GPS zoeken'; }
+  else {
+    const acc = f.acc || 99;
+    el.gpsDot.className = 'dot ' + (acc <= 15 ? 'good' : acc <= 40 ? 'fair' : 'bad');
+    el.gpsTxt.textContent = `± ${Math.round(acc)} m`;
+  }
+  el.dataTxt.textContent = S.data ? `${S.data.cams.length} flitsers · ${S.data.secs.length} trajecten` : 'geen locaties';
+
+  const [state, html] = panelContent();
+  const key = state + html;
+  if (key !== lastPanel) { el.panel.dataset.state = state; el.panel.innerHTML = html; lastPanel = key; }
+}
+function setNotice(text, kind) {
+  S.noticeKind = text ? kind : null;
+  el.notice.hidden = !text;
+  el.notice.textContent = text || '';
+  el.notice.className = 'notice' + (kind === 'warn' ? ' warn' : '');
+}
+function updateIntro() {
+  el.introData.textContent = cached
+    ? `Opgeslagen: ${cached.cams.length} flitsers en ${cached.secs.length} trajectcontroles, bijgewerkt ${ago(cached.fetched)}.`
+    : 'Bij de start laadt Flitswacht de locaties binnen 150 km van je positie.';
+}
+function tickClock() {
+  if (S.running && !S.demo) render();
+}
+
+/* ---------- GPS ---------- */
+function onPos(p) {
+  const c = p.coords;
+  const f = { lat: c.latitude, lon: c.longitude, t: p.timestamp || Date.now(), speed: c.speed, heading: c.heading, acc: c.accuracy };
+  if (S.last && f.t <= S.last.t) return;
+  S.lastRecv = Date.now();
+  if (S.noticeKind === 'gps') setNotice(null);
+  maybeFetch(f);
+  step(f);
+}
+function onPosErr(err) {
+  if (err.code === 1) {
+    stop();
+    showIntroMsg('Flitswacht mag je locatie niet gebruiken. Zet op je iPhone Instellingen › Privacy en beveiliging › Locatievoorzieningen › Safari-websites op ‘Bij gebruik van app’ en start opnieuw.');
+  } else if (!S.last || Date.now() - S.lastRecv > 6000) {
+    setNotice('Zoeken naar GPS-signaal…', 'gps');
+  }
+}
+function showIntroMsg(t) { el.introMsg.textContent = t; el.introMsg.hidden = false; }
+
+/* ---------- start / stop ---------- */
+function resetDrive() {
+  S.last = null; S.lastRecv = 0; S.heading = null; S.speedKmh = 0;
+  S.camTrack.clear(); S.secTrack.clear(); S.cool.clear();
+  S.activeCam = null; S.approach = null; S.inSec = null; S.finished = null; lastPanel = '';
+}
+function startDrive() {
+  el.introMsg.hidden = true;
+  if (!window.isSecureContext || !('geolocation' in navigator)) {
+    showIntroMsg('Locatie werkt alleen als je Flitswacht via een https-adres opent, bijvoorbeeld via GitHub Pages. Een los bestand op je telefoon krijgt geen GPS.');
+    return;
+  }
+  unlockAudio();
+  resetDrive();
+  S.running = true; S.demo = false; S.data = cached;
+  el.intro.hidden = true; el.demoTag.hidden = true;
+  requestWake();
+  setNotice('Zoeken naar GPS-signaal…', 'gps');
+  S.watchId = navigator.geolocation.watchPosition(onPos, onPosErr, { enableHighAccuracy: true, maximumAge: 0, timeout: 15000 });
+  say('Goede rit.', 300);
+  render();
+}
+function stop() {
+  S.running = false;
+  if (S.watchId != null) { try { navigator.geolocation.clearWatch(S.watchId); } catch (e) {} S.watchId = null; }
+  if (S.demoTimer) { clearInterval(S.demoTimer); S.demoTimer = null; }
+  if (S.demo) { S.demo = false; S.data = cached; }
+  releaseWake();
+  try { speechSynthesis.cancel(); } catch (e) {}
+  resetDrive(); setNotice(null);
+  el.demoTag.hidden = true; el.intro.hidden = false;
+  updateIntro();
+}
+
+/* ---------- demo: a simulated drive past a camera and through a section ---------- */
+function startDemo() {
+  el.introMsg.hidden = true;
+  unlockAudio();
+  resetDrive();
+  const base = { lat: 52.0700, lon: 5.1000 };
+  const mLat = 111320, mLon = 111320 * Math.cos(toRad(base.lat));
+  const at = (x, east = 0) => ({ lat: base.lat + x / mLat, lon: base.lon + east / mLon });
+  const demoData = prepare({
+    cams: [{ id: 'demo-cam', ...at(1300, 18), limit: 80, kind: 'flits' }],
+    secs: [{ id: 'demo-sec', name: 'Demotraject', limit: 100, a: at(2050), b: at(4300), directed: true, len: 2250 }],
+    center: base, fetched: Date.now()
+  });
+  S.running = true; S.demo = true; S.data = demoData;
+  el.intro.hidden = true; el.demoTag.hidden = false; setNotice(null);
+  requestWake();
+  const speedAt = x =>
+    x < 250 ? 25 + x / 250 * 60 :
+    x < 950 ? 88 :
+    x < 1250 ? 88 - (x - 950) / 300 * 12 :
+    x < 1450 ? 76 :
+    x < 2000 ? 76 + (x - 1450) / 550 * 24 :
+    x < 4300 ? 98 + 4 * Math.sin((x - 2000) / 260) : 95;
+  let x = 0, t = Date.now();
+  S.demoTimer = setInterval(() => {
+    const v = speedAt(x) / 3.6;
+    x += v; t += 1000;                                   // one simulated second per tick (2× real time)
+    const p = at(x, (Math.random() - 0.5) * 4);
+    S.lastRecv = Date.now();
+    step({ lat: p.lat, lon: p.lon, t, speed: v, heading: 0, acc: 6 });
+    if (x > 4800) {
+      clearInterval(S.demoTimer); S.demoTimer = null;
+      setTimeout(() => { if (S.demo) stop(); }, 9000);
+    }
+  }, 500);
+  say('Demo gestart.', 300);
+}
+
+/* ---------- wiring ---------- */
+function syncSoundBtn() { el.sound.textContent = S.sound ? 'Geluid aan' : 'Geluid uit'; el.sound.setAttribute('aria-pressed', String(S.sound)); }
+el.start.addEventListener('click', startDrive);
+el.demo.addEventListener('click', startDemo);
+el.stop.addEventListener('click', stop);
+el.sound.addEventListener('click', () => {
+  S.sound = !S.sound; store(KEY_SOUND, S.sound ? '1' : '0'); syncSoundBtn();
+  if (S.sound) { unlockAudio(); tone(880, .15); } else { try { speechSynthesis.cancel(); } catch (e) {} }
+});
+el.refresh.addEventListener('click', () => {
+  if (S.demo) return;
+  const c = S.last || (cached && cached.center);
+  if (!c) { setNotice('Wachten op GPS. Daarna worden de locaties geladen.', 'gps'); return; }
+  S.lastFetchTry = 0; fetchData(c);
+});
+const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+el.homeHint.hidden = !(isIOS && !navigator.standalone);
+syncSoundBtn(); updateIntro(); tickClock(); render();
+setInterval(tickClock, 1000);
+
+})();
+</script>
+</body>
+</html>
